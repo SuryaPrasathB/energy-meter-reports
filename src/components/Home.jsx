@@ -35,7 +35,7 @@ export default function Home() {
       if (startDate) params.append('startDate', startDate);
       if (endDate) params.append('endDate', endDate);
 
-      const response = await fetch(`https://80d9-49-206-23-211.ngrok-free.app/api/reports/search?${params.toString()}`);
+      const response = await fetch(`https://b0a8-49-206-22-145.ngrok-free.app/api/reports/search?${params.toString()}`);
       const data = await response.json();
 
       if (data.available && data.files.length > 0) {
@@ -74,7 +74,7 @@ export default function Home() {
       const zipParams = new URLSearchParams();
       selectedFiles.forEach(file => zipParams.append('files', file));
 
-      const zipUrl = `https://80d9-49-206-23-211.ngrok-free.app/api/reports/download-zip?${zipParams.toString()}`;
+      const zipUrl = `https://b0a8-49-206-22-145.ngrok-free.app/api/reports/download-zip?${zipParams.toString()}`;
       const link = document.createElement('a');
       link.href = zipUrl;
       link.download = 'reports.zip';
@@ -187,7 +187,7 @@ export default function Home() {
                           className="checkbox"
                         />
                         <a
-                          href={`https://80d9-49-206-23-211.ngrok-free.app/api/reports/download/${date}/${file}`}
+                          href={`https://b0a8-49-206-22-145.ngrok-free.app/api/reports/download/${date}/${file}`}
                           download
                           className="download-link"
                           onClick={(e) => e.stopPropagation()} // prevent checkbox toggle when clicking link
